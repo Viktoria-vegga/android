@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MitrofanovaViktoria</string>
+    <string name="linear_button_text">Перейти на LinerLayout</string>
+    <string name="relative_button_text">Перейти на RelativeLayout</string>
+    <string name="constraint_button_text">Перейти на Constraint Layout</string>
+    <string name="hint_for_edit_text">Поле для ввода</string>
+    <string name="constraint_layout_Text">Обычный текс на ConstraintLayout</string>
+    <string name="relative_layout_Text">Обычный текс на RelativeLayout</string>
+    <string name="button_text">КНОПКА</string>
+    <string name="go_with_result">Перейти на MainActivty и вернуть результат</string>
+    <string name="default_result">Здесь будет результат</string>
 </resources>
