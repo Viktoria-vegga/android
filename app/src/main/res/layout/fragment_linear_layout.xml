@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.LinearLayoutFragment">
 
     <TextView
@@ -33,10 +34,15 @@
         android:layout_height="250dp"
         android:src="@drawable/_708452130apple6b"/>
 
-    <Button
-        android:id="@+id/result_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/go_with_result"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/child_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
 
 </LinearLayout>
