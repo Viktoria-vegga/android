@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LinerLayoutActivity">
+    tools:context=".activities.LinerLayoutActivity">
 
     <TextView
         android:id="@+id/text_view2"

@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria;
+package com.example.mitrofanovaviktoria.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.mitrofanovaviktoria.Constants;
+import com.example.mitrofanovaviktoria.R;
 import com.example.mitrofanovaviktoria.databinding.ActivityConstraintLayoutBinding;
 
 public class ConstraintLayoutActivity extends AppCompatActivity {
@@ -18,7 +20,7 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.button1.setOnClickListener(view -> {
-            Log.d("MY_TAG", "нажатие на кнопку на ConstraintLayout");
+            Log.d(Constants.MY_TAG, "нажатие на кнопку на ConstraintLayout");
         });
 
 
