@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             if (data == null) {
                 textView.setText("Результат не был передан");
             } else {
-                textView.setText(data.getStringExtra("resultKey"));
+                textView.setText(getString(R.string.app_name));
             }
         }
     );
