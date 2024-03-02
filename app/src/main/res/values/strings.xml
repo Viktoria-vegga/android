@@ -11,5 +11,6 @@
     <string name="default_result">Здесь будет результат</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="send_to_parent">Пердать данные родительскому фрагменту</string>
+    <string name="send_to_parent">Передать данные родительскому фрагменту</string>
+    <string name="send_to_other">Передать данные другому фрагменту</string>
 </resources>

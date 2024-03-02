@@ -11,40 +11,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.mitrofanovaviktoria.activities.ConstraintLayoutActivity;
+import com.example.mitrofanovaviktoria.activities.LinerLayoutActivity;
+import com.example.mitrofanovaviktoria.activities.RelativeLayoutActivity;
+import com.example.mitrofanovaviktoria.databinding.ActivityMainBinding;
+import com.example.mitrofanovaviktoria.fragments.MainFragment;
+import com.example.mitrofanovaviktoria.fragments.ParentFragment;
 
-    private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(
-        new ActivityResultContracts.StartActivityForResult(),
-        result -> {
-            Intent data = result.getData();
-            TextView textView = findViewById(R.id.result_text_view);
-            if (data == null) {
-                textView.setText("Результат не был передан");
-            } else {
-                textView.setText(data.getStringExtra("resultKey"));
-            }
-        }
-    );
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-    public void clickOnLinearButton(View view) {
-        Intent intent = new Intent(this, LinerLayoutActivity.class);
-        intent.putExtra("text", "Текс был передан через putExtra");
-        launcher.launch(intent);
-    }
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(
+                            R.id.fragment_container,
+                            ParentFragment.class,
+                            null
+                    )
+                    .commit();
+        }
 
-    public void relativeOnLinearButton(View view) {
-        Intent intent = new Intent(this, RelativeLayoutActivity.class);
-        startActivity(intent);
-    }
-
-    public void constraintOnLinearButton(View view) {
-        Intent intent = new Intent(this, ConstraintLayoutActivity.class);
-        startActivity(intent);
     }
 }

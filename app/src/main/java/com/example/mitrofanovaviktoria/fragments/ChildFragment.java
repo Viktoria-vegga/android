@@ -26,9 +26,15 @@ public class ChildFragment extends Fragment {
 
         binding.sendButton.setOnClickListener(view -> {
             Bundle result = new Bundle();
-            result.putString(Constants.BUNDLE_KEY, "Результат переданный дочернему фрагменту");
+            result.putString(Constants.BUNDLE_KEY, "Результат переданный от дочернего фрагмента");
             getParentFragmentManager().setFragmentResult(Constants.CHILD_REQUEST_KEY, result);
         });
+
+        getParentFragmentManager().setFragmentResultListener(Constants.REQUEST_KEY,
+                this, (requestKey, bundle) -> {
+                    String result = bundle.getString(Constants.BUNDLE_KEY);
+                    binding.resultTextView.setText(result);
+                });
 
         return binding.getRoot();
     }
