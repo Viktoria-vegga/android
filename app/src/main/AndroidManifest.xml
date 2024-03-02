@@ -13,13 +13,13 @@
         android:theme="@style/Theme.MitrofanovaViktoria"
         tools:targetApi="33">
         <activity
-            android:name=".ConstraintLayoutActivity"
+            android:name=".activities.ConstraintLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".RelativeLayoutActivity"
+            android:name=".activities.RelativeLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".LinerLayoutActivity"
+            android:name=".activities.LinerLayoutActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

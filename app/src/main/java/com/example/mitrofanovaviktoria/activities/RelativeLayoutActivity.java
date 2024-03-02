@@ -1,10 +1,13 @@
-package com.example.mitrofanovaviktoria;
+package com.example.mitrofanovaviktoria.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+
+import com.example.mitrofanovaviktoria.Constants;
+import com.example.mitrofanovaviktoria.R;
 
 public class RelativeLayoutActivity extends AppCompatActivity {
 
@@ -15,7 +18,7 @@ public class RelativeLayoutActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button3);
         button.setOnClickListener(view -> {
-            Log.d("MY_TAG", "клик на кнопку на RelativeLayout");
+            Log.d(Constants.MY_TAG, "клик на кнопку на RelativeLayout");
         });
     }
 }
