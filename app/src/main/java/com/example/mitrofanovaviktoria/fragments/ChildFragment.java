@@ -2,6 +2,7 @@ package com.example.mitrofanovaviktoria.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -20,13 +21,13 @@ public class ChildFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         FragmentChildBinding binding = FragmentChildBinding.inflate(inflater, container, false);
 
         binding.sendButton.setOnClickListener(view -> {
             Bundle result = new Bundle();
-            result.putString(Constants.BUNDLE_KEY, "Результат переданный дочернему фрагменту");
+            result.putString(Constants.BUNDLE_KEY, "Результат переданный от дочернего фрагмента");
             getParentFragmentManager().setFragmentResult(Constants.CHILD_REQUEST_KEY, result);
         });
 

@@ -13,6 +13,7 @@ import com.example.mitrofanovaviktoria.activities.ConstraintLayoutActivity;
 import com.example.mitrofanovaviktoria.activities.LinerLayoutActivity;
 import com.example.mitrofanovaviktoria.activities.RelativeLayoutActivity;
 import com.example.mitrofanovaviktoria.databinding.ActivityMainBinding;
+import com.example.mitrofanovaviktoria.fragments.ButtonsFragment;
 import com.example.mitrofanovaviktoria.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 .setReorderingAllowed(true)
                 .add(
                     R.id.fragment_container,
-                    MainFragment.class,
+                    ButtonsFragment.class,
                     null
                 )
                 .commit();
