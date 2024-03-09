@@ -12,7 +12,7 @@ public class Constants {
     public static ArrayList<String> Items() {
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < 200; i++) {
-            list.add("item " + (i + 1));
+            list.add("элемент " + (i + 1));
         }
         return list;
     }
