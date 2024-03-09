@@ -31,6 +31,12 @@ public class ChildFragment extends Fragment {
             getParentFragmentManager().setFragmentResult(Constants.CHILD_REQUEST_KEY, result);
         });
 
+        getParentFragmentManager().setFragmentResultListener(Constants.REQUEST_KEY,
+                this, (requestKey, bundle) -> {
+                    String result = bundle.getString(Constants.BUNDLE_KEY);
+                    binding.resultTextView.setText(result);
+                });
+
         return binding.getRoot();
     }
 }
