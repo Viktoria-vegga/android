@@ -34,40 +34,40 @@ public class MainFragment extends Fragment {
             result.putString(Constants.BUNDLE_KEY, "Результат от фрагмента MainFragment");
             getParentFragmentManager().setFragmentResult(
                     Constants.REQUEST_KEY, result);
-            getParentFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .replace(
-                            R.id.fragment_container,
-                            LinearLayoutFragment.class,
-                            null
-                    )
-                    .addToBackStack(null)
-                    .commit();
+//            getParentFragmentManager().beginTransaction()
+//                    .setReorderingAllowed(true)
+//                    .replace(
+//                            R.id.fragment_container,
+//                            LinearLayoutFragment.class,
+//                            null
+//                    )
+//                    .addToBackStack(null)
+//                    .commit();
         });
 
-        binding.relativeButton.setOnClickListener(view -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .replace(
-                            R.id.fragment_container,
-                            RelativeLayoutFragment.class,
-                            null
-                    )
-                    .addToBackStack(null)
-                    .commit();
-        });
-
-        binding.constraintButton.setOnClickListener(view -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .replace(
-                            R.id.fragment_container,
-                            ConstraintLayoutFragment.class,
-                            null
-                    )
-                    .addToBackStack(null)
-                    .commit();
-        });
+//        binding.relativeButton.setOnClickListener(view -> {
+//            requireActivity().getSupportFragmentManager().beginTransaction()
+//                    .setReorderingAllowed(true)
+//                    .replace(
+//                            R.id.fragment_container,
+//                            RelativeLayoutFragment.class,
+//                            null
+//                    )
+//                    .addToBackStack(null)
+//                    .commit();
+//        });
+//
+//        binding.constraintButton.setOnClickListener(view -> {
+//            requireActivity().getSupportFragmentManager().beginTransaction()
+//                    .setReorderingAllowed(true)
+//                    .replace(
+//                            R.id.fragment_container,
+//                            ConstraintLayoutFragment.class,
+//                            null
+//                    )
+//                    .addToBackStack(null)
+//                    .commit();
+//        });
 
 
 

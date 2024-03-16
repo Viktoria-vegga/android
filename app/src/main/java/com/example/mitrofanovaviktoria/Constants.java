@@ -8,6 +8,7 @@ public class Constants {
     static final public String REQUEST_KEY = "REQUEST_KEY";
     static final public String BUNDLE_KEY = "REQUEST_KEY";
     static final public String CHILD_REQUEST_KEY = "CHILD_REQUEST_KEY";
+    static final public String BUNDLE_STRING_KEY = "BUNDLE_STRING_KEY";
 
     public static ArrayList<String> Items() {
         ArrayList<String> list = new ArrayList<String>();

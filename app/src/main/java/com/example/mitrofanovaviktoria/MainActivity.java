@@ -24,16 +24,16 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                .setReorderingAllowed(true)
-                .add(
-                    R.id.fragment_container,
-                    ButtonsFragment.class,
-                    null
-                )
-                .commit();
-        }
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                .setReorderingAllowed(true)
+//                .add(
+//                    R.id.fragment_container,
+//                    ButtonsFragment.class,
+//                    null
+//                )
+//                .commit();
+//        }
 
     }
 }

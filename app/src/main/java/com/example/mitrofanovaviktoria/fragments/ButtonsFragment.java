@@ -17,29 +17,29 @@ public class ButtonsFragment extends Fragment {
                              Bundle savedInstanceState) {
         FragmentButtonsBinding binding = FragmentButtonsBinding.inflate(getLayoutInflater());
 
-        binding.goToListViewFragmentButton.setOnClickListener(view -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .replace(
-                            R.id.fragment_container,
-                            ListFragment.class,
-                            null
-                    )
-                    .addToBackStack(null)
-                    .commit();
-        });
-
-        binding.goToRecycleViewFragmentButton.setOnClickListener(view -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .replace(
-                            R.id.fragment_container,
-                            RecyclerFragment.class,
-                            null
-                    )
-                    .addToBackStack(null)
-                    .commit();
-        });
+//        binding.goToListViewFragmentButton.setOnClickListener(view -> {
+//            requireActivity().getSupportFragmentManager().beginTransaction()
+//                    .setReorderingAllowed(true)
+//                    .replace(
+//                            R.id.fragment_container,
+//                            ListFragment.class,
+//                            null
+//                    )
+//                    .addToBackStack(null)
+//                    .commit();
+//        });
+//
+//        binding.goToRecycleViewFragmentButton.setOnClickListener(view -> {
+//            requireActivity().getSupportFragmentManager().beginTransaction()
+//                    .setReorderingAllowed(true)
+//                    .replace(
+//                            R.id.fragment_container,
+//                            RecyclerFragment.class,
+//                            null
+//                    )
+//                    .addToBackStack(null)
+//                    .commit();
+//        });
 
         return binding.getRoot();
     }
