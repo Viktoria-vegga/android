@@ -5,7 +5,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
 //        if (savedInstanceState == null) {
 //            getSupportFragmentManager().beginTransaction()
 //                .setReorderingAllowed(true)
@@ -35,5 +39,19 @@ public class MainActivity extends AppCompatActivity {
 //                .commit();
 //        }
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent(this, OverlayService.class);
+        if (Settings.canDrawOverlays(getApplicationContext())) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Log.w("MY_TAG", "1");
+                startForegroundService(intent);
+            } else {
+                startService(intent);
+            }
+        }
     }
 }

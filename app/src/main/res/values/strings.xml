@@ -15,4 +15,5 @@
     <string name="listview">перейти к списку ListView</string>
     <string name="recycleview">перейти к списку RecyclerView</string>
     <string name="send_to_other">"отправить данные "</string>
+    <string name="Go_to_second_fragment">Перейти на второй фрагмент</string>
 </resources>
