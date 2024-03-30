@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria.fragments;
+package com.example.mitrofanovaviktoria.ui.fragments;
 
 import android.os.Bundle;
 

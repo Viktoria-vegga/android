@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria.activities;
+package com.example.mitrofanovaviktoria.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.mitrofanovaviktoria.Constants;
+import com.example.mitrofanovaviktoria.domain.Constants;
 import com.example.mitrofanovaviktoria.R;
 
 public class LinerLayoutActivity extends AppCompatActivity {

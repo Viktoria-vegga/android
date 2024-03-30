@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/ловандовый"
-    tools:context=".fragments.ChildFragment">
+    tools:context=".ui.fragments.ChildFragment">
 
     <TextView
         android:id="@+id/result_text_view"

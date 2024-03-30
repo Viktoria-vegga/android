@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:background="@color/сиреневый"
-    tools:context=".fragments.ChildFragment2">
+    tools:context=".ui.fragments.ChildFragment2">
 
     <Button
         android:id="@+id/send_button"

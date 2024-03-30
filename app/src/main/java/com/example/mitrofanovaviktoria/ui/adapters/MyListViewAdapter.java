@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria.adapters;
+package com.example.mitrofanovaviktoria.ui.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

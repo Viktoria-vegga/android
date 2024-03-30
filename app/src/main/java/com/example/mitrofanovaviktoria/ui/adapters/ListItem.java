@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria.adapters;
+package com.example.mitrofanovaviktoria.ui.adapters;
 
 //public class ListItem {
 //    public String itemText;

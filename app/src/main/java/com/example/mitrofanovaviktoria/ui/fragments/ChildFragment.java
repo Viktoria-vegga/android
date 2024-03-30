@@ -1,17 +1,15 @@
-package com.example.mitrofanovaviktoria.fragments;
+package com.example.mitrofanovaviktoria.ui.fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mitrofanovaviktoria.Constants;
-import com.example.mitrofanovaviktoria.R;
+import com.example.mitrofanovaviktoria.domain.Constants;
 import com.example.mitrofanovaviktoria.databinding.FragmentChildBinding;
 
 public class ChildFragment extends Fragment {

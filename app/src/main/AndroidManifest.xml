@@ -17,16 +17,16 @@
         android:theme="@style/Theme.MitrofanovaViktoria"
         tools:targetApi="33">
         <activity
-            android:name=".activities.ConstraintLayoutActivity"
+            android:name=".ui.activities.ConstraintLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.RelativeLayoutActivity"
+            android:name=".ui.activities.RelativeLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.LinerLayoutActivity"
+            android:name=".ui.activities.LinerLayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +36,7 @@
         </activity>
 
         <service
-            android:name=".OverlayService">
+            android:name=".ui.MyService">
         </service>
     </application>
 

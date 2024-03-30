@@ -1,27 +1,31 @@
-package com.example.mitrofanovaviktoria.adapters;
+package com.example.mitrofanovaviktoria.ui.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.mitrofanovaviktoria.domain.Constants;
 import com.example.mitrofanovaviktoria.R;
+import com.example.mitrofanovaviktoria.data.User;
 
 import java.util.ArrayList;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
-    private final ArrayList<String> data;
+    private ArrayList<User> data;
     private final Context context;
 
-    public MyRecyclerAdapter(ArrayList<String> data, Context context) {
+    public MyRecyclerAdapter(ArrayList<User> data, Context context) {
         this.data = data;
         this.context = context;
     }
@@ -33,16 +37,29 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         return new ViewHolder(view);
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String item = data.get(position);
-        holder.text.setText(item);
+        User item = data.get(position);
+        holder.text.setText(item.firstName + "  " + item.secondName + "  Age" + item.age);
         holder.image.setImageDrawable(context.getDrawable(R.drawable.baseline_account_balance_24));
+
+        Bundle bundle = new Bundle();
+        bundle.putInt(Constants.BUNDLE_ID_KEY, item.id);
         holder.layout.setOnClickListener(view -> {
-            Toast.makeText(context, "нажатие на элемент recycler view", Toast.LENGTH_SHORT).show();
+            Navigation.findNavController(view).navigate(
+                    R.id.action_listFragment_to_detailsFragment,
+                    bundle
+            );
         });
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void updateData(ArrayList<User> newData) {
+        data = new ArrayList<>(newData);
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getItemCount() {

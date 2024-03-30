@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria.activities;
+package com.example.mitrofanovaviktoria.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.mitrofanovaviktoria.Constants;
+import com.example.mitrofanovaviktoria.domain.Constants;
 import com.example.mitrofanovaviktoria.R;
 import com.example.mitrofanovaviktoria.databinding.ActivityConstraintLayoutBinding;
 

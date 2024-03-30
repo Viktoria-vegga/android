@@ -1,4 +1,4 @@
-package com.example.mitrofanovaviktoria.fragments;
+package com.example.mitrofanovaviktoria.ui.fragments;
 
 import android.os.Bundle;
 
@@ -19,9 +19,9 @@ public class Fragment3 extends Fragment {
                              Bundle savedInstanceState) {
         Fragment3Binding binding = Fragment3Binding.inflate(getLayoutInflater());
 
-        binding.navButton.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.action_fragment3_to_fragment1);
-        });
+//        binding.navButton.setOnClickListener(view -> {
+//            Navigation.findNavController(view).navigate(R.id.action_fragment3_to_fragment1);
+//        });
 
         return binding.getRoot();
     }
