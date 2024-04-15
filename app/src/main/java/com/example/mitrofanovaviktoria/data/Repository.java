@@ -1,34 +1,31 @@
 package com.example.mitrofanovaviktoria.data;
 
-import java.util.ArrayList;
+import android.app.Application;
+
+import androidx.lifecycle.MutableLiveData;
+
 import java.util.List;
 
 public class Repository {
+    private final UserDao db;
 
-    private ArrayList<User> users = new ArrayList<>();
-
-    public Repository() {
-        for (int i = 0; i < 20; i++) {
-            User user = new User();
-            user.id = i;
-            user.firstName = "FirstName" + i;
-            user.secondName = "SecondName" + i;
-            user.age = String.valueOf(20 + i);
-            user.detailsInformation = "Details Information about " + user.firstName;
-            users.add(user);
-        }
+    public Repository(Application app) {
+        db = AppDatabase.getDataBase(app).dao();
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
+    public MutableLiveData<List<User>> getUsers() {
+        MutableLiveData<List<User>> usersLiveData = new MutableLiveData<>();
+
+        AppDatabase.databaseWriterExecutor.execute(() -> {
+            usersLiveData.postValue(db.getAllItems());
+        });
+
+        return usersLiveData;
     }
 
-    public User getUser(int id) {
-        for (User user : users) {
-            if (user.id == id) {
-                return user;
-            }
-        }
-        return null;
+    public void addUser(User user) {
+        AppDatabase.databaseWriterExecutor.execute(() -> {
+            db.insert(user);
+        });
     }
 }

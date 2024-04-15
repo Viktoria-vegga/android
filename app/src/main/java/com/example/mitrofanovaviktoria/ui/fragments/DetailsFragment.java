@@ -2,6 +2,7 @@ package com.example.mitrofanovaviktoria.ui.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -21,12 +22,12 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         FragmentDetailsBinding binding = FragmentDetailsBinding.inflate(getLayoutInflater());
 
-        UserDetailViewMode viewModel = new ViewModelProvider(this).get(UserDetailViewMode.class);
-        viewModel.user.observe(getViewLifecycleOwner(), users -> {
-            binding.firstName.setText(users.firstName);
-            binding.secondName.setText(users.secondName);
-            binding.age.setText(users.age);
-            binding.details.setText(users.detailsInformation);
+        UserDetailViewMode viewModel = new ViewModelProvider(requireActivity()).get(UserDetailViewMode.class);
+        viewModel.user.observe(getViewLifecycleOwner(), user -> {
+            binding.firstName.setText(user.firstName);
+            binding.secondName.setText(user.secondName);
+            binding.age.setText(user.age);
+            binding.details.setText(user.detailsInformation);
         });
 
         binding.backButton.setOnClickListener(view -> {
@@ -35,7 +36,8 @@ public class DetailsFragment extends Fragment {
 
         Bundle bundle = getArguments();
         if (bundle != null) {
-            viewModel.updateUser(bundle.getInt(Constants.BUNDLE_ID_KEY));
+            int userId = bundle.getInt(Constants.BUNDLE_ID_KEY);
+            //viewModel.updateUser(userId);
         }
 
         return binding.getRoot();

@@ -20,6 +20,7 @@ import com.example.mitrofanovaviktoria.R;
 import com.example.mitrofanovaviktoria.data.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
     private ArrayList<User> data;
@@ -55,9 +56,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void updateData(ArrayList<User> newData) {
-        data = new ArrayList<>(newData);
-        notifyDataSetChanged();
+    public void updateData(List<User> newData) {
+        if (newData != null) {
+            data = new ArrayList<>(newData);
+            notifyDataSetChanged();
+        }
     }
 
 
